@@ -11,8 +11,9 @@ export const Modal = ({ image, alt, onClose }) => {
     };
 
     window.addEventListener('keydown', handleKeyDown);
+
     return () => {
-      window.addEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keydown', handleKeyDown);
     };
   }, [onClose]);
 
@@ -21,6 +22,7 @@ export const Modal = ({ image, alt, onClose }) => {
       onClose();
     }
   };
+
   return (
     <Overlay onClick={handleBackDropClick}>
       <ModalWindow>
