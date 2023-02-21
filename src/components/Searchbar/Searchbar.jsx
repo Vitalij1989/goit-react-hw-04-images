@@ -19,8 +19,6 @@ export const Searchbar = ({ onSubmit }) => {
   };
 
   const handleFormSubmit = e => {
-    const { query } = this.state;
-
     e.preventDefault();
 
     if (!query.trim()) {
